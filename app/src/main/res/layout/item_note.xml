@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="139dp"
         android:layout_gravity="center"
         android:background="#F3F3F3"
         android:clickable="true"
@@ -25,11 +25,12 @@
             android:maxLines="1"
             android:visibility="gone" />
 
+
         <EditText
             android:id="@+id/editTextContent"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_gravity="bottom|clip_horizontal|center"
+            android:layout_height="71dp"
+            android:layout_gravity="clip_horizontal|center"
             android:layout_marginBottom="8dp"
             android:background="@android:color/transparent"
             android:focusable="false"
@@ -37,15 +38,21 @@
             android:hint="Note Content"
             android:maxLines="5" />
 
-
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
-            android:layout_height="34dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_marginBottom="8dp"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:textColor="@android:color/darker_gray" />
 
     </androidx.cardview.widget.CardView>
 

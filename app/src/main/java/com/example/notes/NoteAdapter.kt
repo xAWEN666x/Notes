@@ -8,6 +8,8 @@ import android.widget.EditText
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.R
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class NoteAdapter(private var notes: List<Note>) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
@@ -29,6 +31,7 @@ class NoteAdapter(private var notes: List<Note>) : RecyclerView.Adapter<NoteAdap
         val titleTextView: TextView = itemView.findViewById(R.id.textViewTitle)
         val titleEditText: EditText = itemView.findViewById(R.id.editTextTitle)
         val contentEditText: EditText = itemView.findViewById(R.id.editTextContent)
+        val textViewDateTime: TextView = itemView.findViewById(R.id.textViewDateTime)  // Add this line
 
         init {
             // Пример обработки нажатия на элемент списка
@@ -49,6 +52,9 @@ class NoteAdapter(private var notes: List<Note>) : RecyclerView.Adapter<NoteAdap
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentNote = notes[position]
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val formattedDate = dateFormat.format(currentNote.date)
+        holder.textViewDateTime.text = formattedDate
         holder.titleTextView.text = currentNote.title
         holder.titleEditText.setText(currentNote.title)
         holder.contentEditText.setText(currentNote.content)
